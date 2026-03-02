@@ -145,7 +145,7 @@ void print() const;
 */
 bool equals(const BookType& other) const;
 /// @}
-private:
+protected:
 std::string bookTitle; ///< Book title.
 std::string isbn; ///< ISBN-13 identifier.
 std::string author; ///< Author's full name.
