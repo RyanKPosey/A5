@@ -412,3 +412,23 @@ bool BookType::equals(const BookType& other) const
 {
 return (isbn == other.isbn);
 }
+
+// operator overloads
+
+bookType& operator++() { // prefix
+    book.setQty(9);
+    if ((++book).getQty() >= 10)
+        cout << "Shelf is full!";   // fires! qty is now 10
+
+    return &book;
+}
+
+bookType operator++(int) {
+    // Customer buys a book — log the sale, THEN decrement
+    book.setQty(5);
+    bookType receipt = book--;
+    cout << receipt.getQty();   // 5 (old value for receipt)
+    cout << book.getQty();      // 4 (updated stock)
+
+    return book; // return the updated book after decrementing
+}

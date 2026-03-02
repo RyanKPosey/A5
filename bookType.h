@@ -156,4 +156,10 @@ float wholesale; ///< Wholesale (cost) price.
 float retail; ///< Retail (selling) price.
 static int bookCount; ///< Running total of BookType instances.
 };
+
+// operator overloads
+
+bookType& operator++();          // prefix  — no param
+bookType  operator++(int);       // postfix — dummy int
+
 #endif // BOOKTYPE_H
